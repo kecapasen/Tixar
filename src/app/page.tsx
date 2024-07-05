@@ -1,113 +1,260 @@
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import { Separator } from "@radix-ui/react-context-menu";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:size-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <div className="min-h-dvh font-poppins text-stone-800">
+      <div className="flex justify-between items-center px-8 py-4 w-full">
+        <p className="text-2xl font-bold">TIXAR</p>
+        <div className="flex gap-4 items-center">
+          <Button variant="link">Kenapa gabung?</Button>
+          <Button variant="link">FAQ</Button>
+          <Button>Gabung sekarang!</Button>
         </div>
       </div>
-
-      <div className="relative z-[-1] flex place-items-center before:absolute before:h-[300px] before:w-full before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 sm:before:w-[480px] sm:after:w-[240px] before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
+      <div className="grid grid-cols-2 px-8 py-12">
+        <div className="flex flex-col justify-center gap-4">
+          <p className="text-4xl font-bold">
+            Yuk, Gabung dan Eksplorasi Dunia Digital Bareng Kita!
+          </p>
+          <Separator className="w-48 border-2 rounded-full border-amber-500" />
+          <p className="text-sm font-medium text-justify">
+            Halo, teman-teman! Punya mimpi jadi programmer handal, desainer
+            grafis keren, atau ahli digital lainnya? Di Tixar, kita ngumpul
+            bareng buat belajar, berbagi ilmu, dan berkarya. Di sini, kamu bakal
+            ketemu teman-teman yang sama-sama punya semangat tinggi buat ngejar
+            passion di dunia teknologi dan kreativitas. So, siap-siap buat
+            petualangan seru yang bakal bikin skill kamu naik level!
+          </p>
+          <Button className="w-48">Gabung sekarang!</Button>
+        </div>
+        <div className="flex items-center justify-end">
+          <Image
+            src={"/hero.svg"}
+            alt="Dekorasi"
+            height={500}
+            width={500}
+            quality={100}
+          />
+        </div>
       </div>
-
-      <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-balance text-sm opacity-50">
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
+      <div className="flex flex-col justify-center gap-8 px-8 py-12 bg-slate-100 shadow-inner">
+        <p className="text-2xl font-bold text-center underline">
+          Kenapa Harus Gabung?
+        </p>
+        <div className="grid grid-cols-3 gap-8">
+          <div className="flex gap-2">
+            <p className="py-4 text-base font-bold">1.</p>
+            <Card className="ml-4 w-full">
+              <CardHeader className="flex flex-col gap-1">
+                <CardTitle className="text-base font-bold">
+                  Belajar Coding dari Dasar Sampai Ahli
+                </CardTitle>
+                <Separator className="w-full border rounded-full border-amber-500" />
+                <CardDescription className="text-sm font-medium text-justify text-stone-800">
+                  Mulai dari HTML, CSS, JavaScript, sampai Python dan lain-lain,
+                  kita punya mentor yang siap bantu kamu jadi pro!
+                </CardDescription>
+              </CardHeader>
+            </Card>
+          </div>
+          <div className="flex gap-2">
+            <p className="py-4 text-base font-bold">2.</p>
+            <Card className="ml-4 w-full">
+              <CardHeader className="flex flex-col gap-1">
+                <CardTitle className="text-base font-bold">
+                  Desain Grafis yang Keren Abis
+                </CardTitle>
+                <Separator className="w-full border rounded-full border-amber-500" />
+                <CardDescription className="text-sm font-medium text-justify text-stone-800">
+                  Pelajari teknik-teknik desain terkini, software keren kayak
+                  Adobe Photoshop, Illustrator, dan banyak lagi!
+                </CardDescription>
+              </CardHeader>
+            </Card>
+          </div>
+          <div className="flex gap-2">
+            <p className="py-4 text-base font-bold">3.</p>
+            <Card className="ml-4 w-full">
+              <CardHeader className="flex flex-col gap-1">
+                <CardTitle className="text-base font-bold">
+                  Komunitas yang Asik dan Supportif
+                </CardTitle>
+                <Separator className="w-full border rounded-full border-amber-500" />
+                <CardDescription className="text-sm font-medium text-justify text-stone-800">
+                  Gabung di grup belajar, dan berkolaborasi dalam proyek
+                  menarik. Di sini, kita saling dukung dan bertumbuh bareng.
+                </CardDescription>
+              </CardHeader>
+            </Card>
+          </div>
+        </div>
       </div>
-    </main>
+      <div className="flex flex-col justify-center gap-8 px-8 py-12">
+        <p className="text-2xl font-bold text-center underline">Proyek Kami</p>
+        <div className="grid grid-cols-4 gap-8">
+          <Card>
+            <CardHeader>
+              <div className="flex items-center justify-center p-0 relative h-48 w-full">
+                <Image
+                  src="/project-1.svg"
+                  alt="Project-1"
+                  fill
+                  quality={100}
+                  className="object-cover"
+                />
+              </div>
+              <Separator className="w-full border rounded-full border-amber-500" />
+            </CardHeader>
+            <CardContent>
+              <p className="text-base font-bold text-center">
+                Platform E-Learning Sekolah
+              </p>
+            </CardContent>
+            <CardFooter>
+              <Button className="w-full">Lihat Detail</Button>
+            </CardFooter>
+          </Card>
+          <Card>
+            <CardHeader>
+              <div className="flex items-center justify-center p-0 relative h-48 w-full">
+                <Image
+                  src="/project-2.svg"
+                  alt="Project-2"
+                  fill
+                  quality={100}
+                  className="object-cover"
+                />
+              </div>
+              <Separator className="w-full border rounded-full border-amber-500" />
+            </CardHeader>
+            <CardContent>
+              <p className="text-base font-bold text-center">
+                Website Pemilihan Ketua OSIS
+              </p>
+            </CardContent>
+            <CardFooter>
+              <Button className="w-full">Lihat Detail</Button>
+            </CardFooter>
+          </Card>
+          <Card>
+            <CardHeader>
+              <div className="flex items-center justify-center p-0 relative h-48 w-full">
+                <Image
+                  src="/project-3.svg"
+                  alt="Project-3"
+                  fill
+                  quality={100}
+                  className="object-cover"
+                />
+              </div>
+              <Separator className="w-full border rounded-full border-amber-500" />
+            </CardHeader>
+            <CardContent>
+              <p className="text-base font-bold text-center">
+                Texality (Augmented Reality)
+              </p>
+            </CardContent>
+            <CardFooter>
+              <Button className="w-full">Lihat Detail</Button>
+            </CardFooter>
+          </Card>
+          <Card>
+            <CardHeader>
+              <div className="flex items-center justify-center p-0 relative h-48 w-full">
+                <Image
+                  src="/project-4.svg"
+                  alt="Project-4"
+                  fill
+                  quality={100}
+                  className="object-cover"
+                />
+              </div>
+              <Separator className="w-full border rounded-full border-amber-500" />
+            </CardHeader>
+            <CardContent>
+              <p className="text-base font-bold text-center">Game Gemar</p>
+            </CardContent>
+            <CardFooter>
+              <Button className="w-full">Lihat Detail</Button>
+            </CardFooter>
+          </Card>
+        </div>
+      </div>
+      <div className="flex flex-col justify-center gap-8 px-8 py-12">
+        <p className="text-2xl font-bold text-center underline">FAQ</p>
+        <Accordion type="single" collapsible className="w-full">
+          <AccordionItem value="item-1">
+            <AccordionTrigger className="text-base font-bold">
+              Q: Apa sih Tixar itu?
+            </AccordionTrigger>
+            <AccordionContent className="text-sm font-medium">
+              A: Tixar adalah komunitas di sekolah kita yang fokus pada
+              pengembangan keterampilan digital seperti coding, desain grafis,
+              dan keterampilan teknologi lainnya.
+            </AccordionContent>
+          </AccordionItem>
+          <AccordionItem value="item-2">
+            <AccordionTrigger className="text-base font-bold">
+              Q: Siapa saja yang bisa bergabung?
+            </AccordionTrigger>
+            <AccordionContent className="text-sm font-medium">
+              A: Semua siswa yang tertarik dan punya semangat untuk belajar
+              coding atau desain grafis bisa bergabung!
+            </AccordionContent>
+          </AccordionItem>
+          <AccordionItem value="item-3">
+            <AccordionTrigger className="text-base font-bold">
+              Q: Apakah harus punya pengalaman sebelumnya?
+            </AccordionTrigger>
+            <AccordionContent className="text-sm font-medium">
+              A: Nggak perlu, kok! Kita mulai belajar dari dasar, jadi pemula
+              pun sangat welcome.
+            </AccordionContent>
+          </AccordionItem>
+          <AccordionItem value="item-4">
+            <AccordionTrigger className="text-base font-bold">
+              Q: Kapan dan di mana kegiatan diadakan?
+            </AccordionTrigger>
+            <AccordionContent className="text-sm font-medium">
+              A: Kegiatan biasanya diadakan setiap Sabtu dan Minggu (8.30 -
+              11.00) di ruangan 3.4A (Texar). Informasi lebih lanjut akan
+              diberikan setelah kamu bergabung.
+            </AccordionContent>
+          </AccordionItem>
+          <AccordionItem value="item-5">
+            <AccordionTrigger className="text-base font-bold">
+              Q: Bagaimana cara mendaftar?
+            </AccordionTrigger>
+            <AccordionContent className="text-sm font-medium">
+              A: Kamu bisa langsung daftar{" "}
+              <Button asChild variant="link" className="p-0 font-bold">
+                <Link href="">disini.</Link>
+              </Button>
+            </AccordionContent>
+          </AccordionItem>
+        </Accordion>
+      </div>
+      <p className="text-base font-bold text-center py-2">
+        &copy; {new Date().getFullYear()} Rizky Maulana - Tixar.
+      </p>
+    </div>
   );
 }
