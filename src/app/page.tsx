@@ -13,21 +13,21 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import {
-  Sheet,
-  SheetClose,
-  SheetContent,
-  SheetDescription,
-  SheetFooter,
-  SheetHeader,
-  SheetTitle,
-  SheetTrigger,
-} from "@/components/ui/sheet";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
 } from "@/components/ui/carousel";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 import { Separator } from "@radix-ui/react-context-menu";
 import Image from "next/image";
 import Link from "next/link";
@@ -38,7 +38,7 @@ export default function Home() {
     <div className="min-h-dvh font-poppins text-stone-800">
       <div className="flex justify-between items-center px-8 py-4 w-full sticky top-0 bg-white z-10">
         <Sheet>
-          <SheetTrigger asChild className="md:hidden">
+          <SheetTrigger asChild className="lg:hidden">
             <Button variant="ghost" className="p-0">
               <FiMenu className="h-5 w-5" />
             </Button>
@@ -58,18 +58,20 @@ export default function Home() {
           </SheetContent>
         </Sheet>
         <p className="text-2xl font-bold">TIXAR</p>
-        <div className="hidden md:flex gap-4 items-center">
+        <div className="hidden lg:flex gap-4 items-center">
           <Button variant="link">Kenapa gabung?</Button>
           <Button variant="link">FAQ</Button>
-          <Button className="bg-stone-800">Gabung sekarang!</Button>
+          <Button asChild className="bg-stone-800">
+            <Link href="https://bit.ly/join-tixar">Gabung sekarang!</Link>
+          </Button>
         </div>
       </div>
-      <div className="grid md:grid-cols-2 px-8 py-12">
+      <div className="grid lg:grid-cols-2 gap-8 px-8 py-12 bg-slate-100 shadow-inner">
         <div className="flex flex-col justify-center gap-4">
           <p className="text-4xl font-bold">
             Yuk, Gabung dan Eksplorasi Dunia Digital Bareng Kita!
           </p>
-          <Separator className="w-full md:w-48 border-2 rounded-full border-amber-500" />
+          <Separator className="w-full lg:w-48 border-2 rounded-full border-amber-500" />
           <p className="text-sm font-medium text-justify">
             Halo, teman-teman! Punya mimpi jadi programmer handal, desainer
             grafis keren, atau ahli digital lainnya? Di Tixar, kita ngumpul
@@ -78,11 +80,11 @@ export default function Home() {
             passion di dunia teknologi dan kreativitas. So, siap-siap buat
             petualangan seru yang bakal bikin skill kamu naik level!
           </p>
-          <Button className="w-full md:w-48 bg-stone-800">
-            Gabung sekarang!
+          <Button asChild className="w-full lg:w-48 bg-stone-800">
+            <Link href="https://bit.ly/join-tixar">Gabung sekarang!</Link>
           </Button>
         </div>
-        <div className="hidden md:flex items-center justify-end">
+        <div className="hidden lg:flex items-center justify-end">
           <Image
             src={"/hero.svg"}
             alt="Dekorasi"
@@ -92,6 +94,21 @@ export default function Home() {
           />
         </div>
       </div>
+      <div className="flex justify-center items-center gap-8 px-8 py-12">
+        <Separator className="flex-grow hidden lg:inline w-full max-h-0 border-2 rounded-full border-amber-500" />
+        <video
+          width="600"
+          controls
+          autoPlay
+          muted
+          loop
+          className="aspect-video object-cover rounded-sm"
+        >
+          <source src="/tixar.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        <Separator className="flex-grow hidden lg:inline w-full max-h-0 border-2 rounded-full border-amber-500" />
+      </div>
       <div
         className="flex flex-col justify-center gap-8 px-8 py-12 bg-slate-100 shadow-inner"
         id="kenapa-gabung"
@@ -99,8 +116,8 @@ export default function Home() {
         <p className="text-2xl font-bold text-center underline">
           Kenapa Harus Gabung?
         </p>
-        <div className="grid md:grid-cols-3 gap-8">
-          <Card className="md:ml-4 w-full">
+        <div className="grid lg:grid-cols-3 gap-8">
+          <Card className="w-full">
             <CardHeader className="flex flex-col gap-1">
               <CardTitle className="text-base font-bold">
                 Belajar Coding dari Dasar Sampai Ahli
@@ -112,7 +129,7 @@ export default function Home() {
               </CardDescription>
             </CardHeader>
           </Card>
-          <Card className="md:ml-4 w-full">
+          <Card className="w-full">
             <CardHeader className="flex flex-col gap-1">
               <CardTitle className="text-base font-bold">
                 Desain Grafis yang Keren Abis
@@ -124,7 +141,7 @@ export default function Home() {
               </CardDescription>
             </CardHeader>
           </Card>
-          <Card className="md:ml-4 w-full">
+          <Card className="w-full">
             <CardHeader className="flex flex-col gap-1">
               <CardTitle className="text-base font-bold">
                 Komunitas yang Asik dan Supportif
@@ -140,26 +157,99 @@ export default function Home() {
       </div>
       <div className="flex flex-col justify-center gap-8 px-8 py-12">
         <p className="text-2xl font-bold text-center underline">Proyek Kami</p>
-        <Carousel className="w-full">
+        <Carousel className="w-full select-none cursor-grab">
           <CarouselContent>
-            <CarouselItem>
+            <CarouselItem className="md:basis-1/2 lg:basis-1/3 xl:basis-1/4">
               <div className="p-0">
                 <Card>
                   <CardHeader>
                     <div className="flex items-center justify-center p-0 relative h-48 w-full">
                       <Image
-                        src="/project-1.svg"
-                        alt="Project-1"
+                        src="/perpustakaan.svg"
+                        alt="Perpustakaan"
                         fill
                         quality={100}
-                        className="object-cover"
+                        className="object-cover rounded-sm"
                       />
                     </div>
                     <Separator className="w-full border rounded-full border-amber-500" />
                   </CardHeader>
                   <CardContent>
                     <p className="text-base font-bold text-center">
-                      Platform E-Learning Sekolah
+                      Perpustakaan
+                    </p>
+                  </CardContent>
+                  <CardFooter>
+                    <Dialog>
+                      <DialogTrigger asChild>
+                        <Button className="w-full bg-stone-800">
+                          Lihat Detail
+                        </Button>
+                      </DialogTrigger>
+                      <DialogContent className="p-0 overflow-hidden">
+                        <video
+                          width="600"
+                          controls
+                          autoPlay
+                          muted
+                          loop
+                          className="aspect-video object-cover rounded-sm"
+                        >
+                          <source src="/perpustakaan.mp4" type="video/mp4" />
+                          Your browser does not support the video tag.
+                        </video>
+                      </DialogContent>
+                    </Dialog>
+                  </CardFooter>
+                </Card>
+              </div>
+            </CarouselItem>
+            <CarouselItem className="md:basis-1/2 lg:basis-1/3 xl:basis-1/4">
+              <div className="p-0">
+                <Card>
+                  <CardHeader>
+                    <div className="flex items-center justify-center p-0 relative h-48 w-full">
+                      <Image
+                        src="/slider1.jpg"
+                        alt="Texality"
+                        fill
+                        quality={100}
+                        className="object-cover rounded-sm"
+                      />
+                    </div>
+                    <Separator className="w-full border rounded-full border-amber-500" />
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-base font-bold text-center">Texality</p>
+                  </CardContent>
+                  <CardFooter>
+                    <Button className="w-full bg-stone-800" asChild>
+                      <Link href="https://texality.texaslearning.org">
+                        Lihat Detail
+                      </Link>
+                    </Button>
+                  </CardFooter>
+                </Card>
+              </div>
+            </CarouselItem>
+            <CarouselItem className="md:basis-1/2 lg:basis-1/3 xl:basis-1/4">
+              <div className="p-0">
+                <Card>
+                  <CardHeader>
+                    <div className="flex items-center justify-center p-0 relative h-48 w-full">
+                      <Image
+                        src="/texaslearning.jpg"
+                        alt="Texaslearning"
+                        fill
+                        quality={100}
+                        className="object-cover rounded-sm"
+                      />
+                    </div>
+                    <Separator className="w-full border rounded-full border-amber-500" />
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-base font-bold text-center">
+                      Texaslearning
                     </p>
                   </CardContent>
                   <CardFooter>
@@ -170,24 +260,24 @@ export default function Home() {
                 </Card>
               </div>
             </CarouselItem>
-            <CarouselItem>
+            <CarouselItem className="md:basis-1/2 lg:basis-1/3 xl:basis-1/4">
               <div className="p-0">
                 <Card>
                   <CardHeader>
                     <div className="flex items-center justify-center p-0 relative h-48 w-full">
                       <Image
-                        src="/project-2.svg"
-                        alt="Project-2"
+                        src="/texasvoice.svg"
+                        alt="Texasvoice"
                         fill
                         quality={100}
-                        className="object-cover"
+                        className="object-contain"
                       />
                     </div>
                     <Separator className="w-full border rounded-full border-amber-500" />
                   </CardHeader>
                   <CardContent>
                     <p className="text-base font-bold text-center">
-                      Website Pemilihan Ketua OSIS
+                      Texasvoice
                     </p>
                   </CardContent>
                   <CardFooter>
@@ -200,55 +290,49 @@ export default function Home() {
                 </Card>
               </div>
             </CarouselItem>
-            <CarouselItem>
+            <CarouselItem className="md:basis-1/2 lg:basis-1/3 xl:basis-1/4">
               <div className="p-0">
                 <Card>
                   <CardHeader>
                     <div className="flex items-center justify-center p-0 relative h-48 w-full">
                       <Image
-                        src="/project-3.svg"
-                        alt="Project-3"
+                        src="/pilketos.png"
+                        alt="Pilketos"
                         fill
                         quality={100}
-                        className="object-cover"
+                        className="object-contain rounded-sm"
                       />
                     </div>
                     <Separator className="w-full border rounded-full border-amber-500" />
                   </CardHeader>
                   <CardContent>
-                    <p className="text-base font-bold text-center">
-                      Texality (Augmented Reality)
-                    </p>
+                    <p className="text-base font-bold text-center">Pilketos</p>
                   </CardContent>
                   <CardFooter>
                     <Button className="w-full bg-stone-800" asChild>
-                      <Link href="https://texality.texaslearning.org">
-                        Lihat Detail
-                      </Link>
+                      <Link href="http://rizkymaulana.cloud">Lihat Detail</Link>
                     </Button>
                   </CardFooter>
                 </Card>
               </div>
             </CarouselItem>
-            <CarouselItem>
+            <CarouselItem className="md:basis-1/2 lg:basis-1/3 xl:basis-1/4">
               <div className="p-0">
                 <Card>
                   <CardHeader>
                     <div className="flex items-center justify-center p-0 relative h-48 w-full">
                       <Image
-                        src="/project-4.svg"
-                        alt="Project-4"
+                        src="/gemar.jpg"
+                        alt="Gemar"
                         fill
                         quality={100}
-                        className="object-cover"
+                        className="object-cover rounded-sm"
                       />
                     </div>
                     <Separator className="w-full border rounded-full border-amber-500" />
                   </CardHeader>
                   <CardContent>
-                    <p className="text-base font-bold text-center">
-                      Game Gemar
-                    </p>
+                    <p className="text-base font-bold text-center">Gemar</p>
                   </CardContent>
                   <CardFooter>
                     <Button className="w-full bg-stone-800" asChild>
@@ -263,7 +347,10 @@ export default function Home() {
           </CarouselContent>
         </Carousel>
       </div>
-      <div className="flex flex-col justify-center gap-8 px-8 py-12" id="faq">
+      <div
+        className="flex flex-col justify-center gap-8 px-8 py-12 bg-slate-100"
+        id="faq"
+      >
         <p className="text-2xl font-bold text-center underline">FAQ</p>
         <Accordion type="single" collapsible className="w-full">
           <AccordionItem value="item-1">
@@ -311,13 +398,13 @@ export default function Home() {
             <AccordionContent className="text-sm font-medium">
               Kamu bisa langsung daftar{" "}
               <Button asChild variant="link" className="p-0 font-bold">
-                <Link href="">disini.</Link>
+                <Link href="https://bit.ly/join-tixar">disini!</Link>
               </Button>
             </AccordionContent>
           </AccordionItem>
         </Accordion>
       </div>
-      <p className="text-base font-bold text-center py-2">
+      <p className="text-sm font-medium text-center py-2 bg-slate-100">
         &copy; {new Date().getFullYear()} Rizky Maulana - Tixar.
       </p>
     </div>
