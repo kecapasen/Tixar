@@ -29,7 +29,6 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { Separator } from "@radix-ui/react-context-menu";
-import Image from "next/image";
 import Link from "next/link";
 import { FiMenu } from "react-icons/fi";
 
@@ -66,7 +65,7 @@ export default function Home() {
           </Button>
         </div>
       </div>
-      <div className="grid lg:grid-cols-2 gap-8 px-8 py-12 bg-slate-100 shadow-inner">
+      <div className="grid lg:grid-cols-2 gap-8 px-8 py-12">
         <div className="flex flex-col justify-center gap-4">
           <p className="text-4xl font-bold">
             Yuk, Gabung dan Eksplorasi Dunia Digital Bareng Kita!
@@ -85,16 +84,10 @@ export default function Home() {
           </Button>
         </div>
         <div className="hidden lg:flex items-center justify-end">
-          <Image
-            src={"/hero.svg"}
-            alt="Dekorasi"
-            height={500}
-            width={500}
-            quality={100}
-          />
+          <img src={"/hero.svg"} alt="Dekorasi" height={500} width={500} />
         </div>
       </div>
-      <div className="flex justify-center items-center gap-8 px-8 py-12">
+      <div className="flex justify-center items-center gap-8 px-8 py-12 bg-slate-100 shadow-inner">
         <Separator className="flex-grow hidden lg:inline w-full max-h-0 border-2 rounded-full border-amber-500" />
         <video
           width="600"
@@ -108,6 +101,186 @@ export default function Home() {
           Your browser does not support the video tag.
         </video>
         <Separator className="flex-grow hidden lg:inline w-full max-h-0 border-2 rounded-full border-amber-500" />
+      </div>
+      <div className="flex flex-col justify-center gap-8 px-8 py-12">
+        <p className="text-2xl font-bold text-center underline">Proyek Kami</p>
+        <Carousel className="w-full select-none cursor-grab">
+          <CarouselContent>
+            <CarouselItem className="md:basis-1/2 lg:basis-1/3 xl:basis-1/4">
+              <div className="p-0">
+                <Card>
+                  <CardHeader>
+                    <div className="flex items-center justify-center p-0 relative h-48 w-full">
+                      <img
+                        src="/perpustakaan.svg"
+                        alt="Perpustakaan"
+                        className="object-contain absolute h-full w-full"
+                      />
+                    </div>
+                    <Separator className="w-full border rounded-full border-amber-500" />
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-base font-bold text-center">
+                      Perpustakaan
+                    </p>
+                  </CardContent>
+                  <CardFooter>
+                    <Dialog>
+                      <DialogTrigger asChild>
+                        <Button className="w-full bg-stone-800">
+                          Lihat Detail
+                        </Button>
+                      </DialogTrigger>
+                      <DialogContent className="p-0 overflow-hidden">
+                        <video
+                          width="600"
+                          controls
+                          autoPlay
+                          muted
+                          loop
+                          className="aspect-video object-cover rounded-sm"
+                        >
+                          <source src="/perpustakaan.mp4" type="video/mp4" />
+                          Your browser does not support the video tag.
+                        </video>
+                      </DialogContent>
+                    </Dialog>
+                  </CardFooter>
+                </Card>
+              </div>
+            </CarouselItem>
+            <CarouselItem className="md:basis-1/2 lg:basis-1/3 xl:basis-1/4">
+              <div className="p-0">
+                <Card>
+                  <CardHeader>
+                    <div className="flex items-center justify-center p-0 relative h-48 w-full">
+                      <img
+                        src="/texality.jpg"
+                        alt="Texality"
+                        className="object-cover rounded-sm absolute h-full w-full"
+                      />
+                    </div>
+                    <Separator className="w-full border rounded-full border-amber-500" />
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-base font-bold text-center">Texality</p>
+                  </CardContent>
+                  <CardFooter>
+                    <Button className="w-full bg-stone-800" asChild>
+                      <Link href="https://texality.texaslearning.org">
+                        Lihat Detail
+                      </Link>
+                    </Button>
+                  </CardFooter>
+                </Card>
+              </div>
+            </CarouselItem>
+            <CarouselItem className="md:basis-1/2 lg:basis-1/3 xl:basis-1/4">
+              <div className="p-0">
+                <Card>
+                  <CardHeader>
+                    <div className="flex items-center justify-center p-0 relative h-48 w-full">
+                      <img
+                        src="/texaslearning.jpg"
+                        alt="Texaslearning"
+                        className="object-cover rounded-sm absolute h-full w-full"
+                      />
+                    </div>
+                    <Separator className="w-full border rounded-full border-amber-500" />
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-base font-bold text-center">
+                      Texaslearning
+                    </p>
+                  </CardContent>
+                  <CardFooter>
+                    <Button className="w-full bg-stone-800" asChild>
+                      <Link href="https://texaslearning.org">Lihat Detail</Link>
+                    </Button>
+                  </CardFooter>
+                </Card>
+              </div>
+            </CarouselItem>
+            <CarouselItem className="md:basis-1/2 lg:basis-1/3 xl:basis-1/4">
+              <div className="p-0">
+                <Card>
+                  <CardHeader>
+                    <div className="flex items-center justify-center p-0 relative h-48 w-full">
+                      <img
+                        src="/texasvoice.svg"
+                        alt="Texasvoice"
+                        className="object-contain absolute h-full w-full"
+                      />
+                    </div>
+                    <Separator className="w-full border rounded-full border-amber-500" />
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-base font-bold text-center">
+                      Texasvoice
+                    </p>
+                  </CardContent>
+                  <CardFooter>
+                    <Button className="w-full bg-stone-800" asChild>
+                      <Link href="https://texasvoice.texaslearning.org">
+                        Lihat Detail
+                      </Link>
+                    </Button>
+                  </CardFooter>
+                </Card>
+              </div>
+            </CarouselItem>
+            <CarouselItem className="md:basis-1/2 lg:basis-1/3 xl:basis-1/4">
+              <div className="p-0">
+                <Card>
+                  <CardHeader>
+                    <div className="flex items-center justify-center p-0 relative h-48 w-full">
+                      <img
+                        src="/pilketos.png"
+                        alt="Pilketos"
+                        className="object-contain rounded-sm absolute h-full w-full"
+                      />
+                    </div>
+                    <Separator className="w-full border rounded-full border-amber-500" />
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-base font-bold text-center">Pilketos</p>
+                  </CardContent>
+                  <CardFooter>
+                    <Button className="w-full bg-stone-800" asChild>
+                      <Link href="http://rizkymaulana.cloud">Lihat Detail</Link>
+                    </Button>
+                  </CardFooter>
+                </Card>
+              </div>
+            </CarouselItem>
+            <CarouselItem className="md:basis-1/2 lg:basis-1/3 xl:basis-1/4">
+              <div className="p-0">
+                <Card>
+                  <CardHeader>
+                    <div className="flex items-center justify-center p-0 relative h-48 w-full">
+                      <img
+                        src="/gemar.jpg"
+                        alt="Gemar"
+                        className="object-cover rounded-sm absolute h-full w-full"
+                      />
+                    </div>
+                    <Separator className="w-full border rounded-full border-amber-500" />
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-base font-bold text-center">Gemar</p>
+                  </CardContent>
+                  <CardFooter>
+                    <Button className="w-full bg-stone-800" asChild>
+                      <Link href="https://gemar.texaslearning.org">
+                        Lihat Detail
+                      </Link>
+                    </Button>
+                  </CardFooter>
+                </Card>
+              </div>
+            </CarouselItem>
+          </CarouselContent>
+        </Carousel>
       </div>
       <div
         className="flex flex-col justify-center gap-8 px-8 py-12 bg-slate-100 shadow-inner"
@@ -155,202 +328,7 @@ export default function Home() {
           </Card>
         </div>
       </div>
-      <div className="flex flex-col justify-center gap-8 px-8 py-12">
-        <p className="text-2xl font-bold text-center underline">Proyek Kami</p>
-        <Carousel className="w-full select-none cursor-grab">
-          <CarouselContent>
-            <CarouselItem className="md:basis-1/2 lg:basis-1/3 xl:basis-1/4">
-              <div className="p-0">
-                <Card>
-                  <CardHeader>
-                    <div className="flex items-center justify-center p-0 relative h-48 w-full">
-                      <Image
-                        src="/perpustakaan.svg"
-                        alt="Perpustakaan"
-                        fill
-                        quality={100}
-                        className="object-cover rounded-sm"
-                      />
-                    </div>
-                    <Separator className="w-full border rounded-full border-amber-500" />
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-base font-bold text-center">
-                      Perpustakaan
-                    </p>
-                  </CardContent>
-                  <CardFooter>
-                    <Dialog>
-                      <DialogTrigger asChild>
-                        <Button className="w-full bg-stone-800">
-                          Lihat Detail
-                        </Button>
-                      </DialogTrigger>
-                      <DialogContent className="p-0 overflow-hidden">
-                        <video
-                          width="600"
-                          controls
-                          autoPlay
-                          muted
-                          loop
-                          className="aspect-video object-cover rounded-sm"
-                        >
-                          <source src="/perpustakaan.mp4" type="video/mp4" />
-                          Your browser does not support the video tag.
-                        </video>
-                      </DialogContent>
-                    </Dialog>
-                  </CardFooter>
-                </Card>
-              </div>
-            </CarouselItem>
-            <CarouselItem className="md:basis-1/2 lg:basis-1/3 xl:basis-1/4">
-              <div className="p-0">
-                <Card>
-                  <CardHeader>
-                    <div className="flex items-center justify-center p-0 relative h-48 w-full">
-                      <Image
-                        src="/slider1.jpg"
-                        alt="Texality"
-                        fill
-                        quality={100}
-                        className="object-cover rounded-sm"
-                      />
-                    </div>
-                    <Separator className="w-full border rounded-full border-amber-500" />
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-base font-bold text-center">Texality</p>
-                  </CardContent>
-                  <CardFooter>
-                    <Button className="w-full bg-stone-800" asChild>
-                      <Link href="https://texality.texaslearning.org">
-                        Lihat Detail
-                      </Link>
-                    </Button>
-                  </CardFooter>
-                </Card>
-              </div>
-            </CarouselItem>
-            <CarouselItem className="md:basis-1/2 lg:basis-1/3 xl:basis-1/4">
-              <div className="p-0">
-                <Card>
-                  <CardHeader>
-                    <div className="flex items-center justify-center p-0 relative h-48 w-full">
-                      <Image
-                        src="/texaslearning.jpg"
-                        alt="Texaslearning"
-                        fill
-                        quality={100}
-                        className="object-cover rounded-sm"
-                      />
-                    </div>
-                    <Separator className="w-full border rounded-full border-amber-500" />
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-base font-bold text-center">
-                      Texaslearning
-                    </p>
-                  </CardContent>
-                  <CardFooter>
-                    <Button className="w-full bg-stone-800" asChild>
-                      <Link href="https://texaslearning.org">Lihat Detail</Link>
-                    </Button>
-                  </CardFooter>
-                </Card>
-              </div>
-            </CarouselItem>
-            <CarouselItem className="md:basis-1/2 lg:basis-1/3 xl:basis-1/4">
-              <div className="p-0">
-                <Card>
-                  <CardHeader>
-                    <div className="flex items-center justify-center p-0 relative h-48 w-full">
-                      <Image
-                        src="/texasvoice.svg"
-                        alt="Texasvoice"
-                        fill
-                        quality={100}
-                        className="object-contain"
-                      />
-                    </div>
-                    <Separator className="w-full border rounded-full border-amber-500" />
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-base font-bold text-center">
-                      Texasvoice
-                    </p>
-                  </CardContent>
-                  <CardFooter>
-                    <Button className="w-full bg-stone-800" asChild>
-                      <Link href="https://texasvoice.texaslearning.org">
-                        Lihat Detail
-                      </Link>
-                    </Button>
-                  </CardFooter>
-                </Card>
-              </div>
-            </CarouselItem>
-            <CarouselItem className="md:basis-1/2 lg:basis-1/3 xl:basis-1/4">
-              <div className="p-0">
-                <Card>
-                  <CardHeader>
-                    <div className="flex items-center justify-center p-0 relative h-48 w-full">
-                      <Image
-                        src="/pilketos.png"
-                        alt="Pilketos"
-                        fill
-                        quality={100}
-                        className="object-contain rounded-sm"
-                      />
-                    </div>
-                    <Separator className="w-full border rounded-full border-amber-500" />
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-base font-bold text-center">Pilketos</p>
-                  </CardContent>
-                  <CardFooter>
-                    <Button className="w-full bg-stone-800" asChild>
-                      <Link href="http://rizkymaulana.cloud">Lihat Detail</Link>
-                    </Button>
-                  </CardFooter>
-                </Card>
-              </div>
-            </CarouselItem>
-            <CarouselItem className="md:basis-1/2 lg:basis-1/3 xl:basis-1/4">
-              <div className="p-0">
-                <Card>
-                  <CardHeader>
-                    <div className="flex items-center justify-center p-0 relative h-48 w-full">
-                      <Image
-                        src="/gemar.jpg"
-                        alt="Gemar"
-                        fill
-                        quality={100}
-                        className="object-cover rounded-sm"
-                      />
-                    </div>
-                    <Separator className="w-full border rounded-full border-amber-500" />
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-base font-bold text-center">Gemar</p>
-                  </CardContent>
-                  <CardFooter>
-                    <Button className="w-full bg-stone-800" asChild>
-                      <Link href="https://gemar.texaslearning.org">
-                        Lihat Detail
-                      </Link>
-                    </Button>
-                  </CardFooter>
-                </Card>
-              </div>
-            </CarouselItem>
-          </CarouselContent>
-        </Carousel>
-      </div>
-      <div
-        className="flex flex-col justify-center gap-8 px-8 py-12 bg-slate-100"
-        id="faq"
-      >
+      <div className="flex flex-col justify-center gap-8 px-8 py-12" id="faq">
         <p className="text-2xl font-bold text-center underline">FAQ</p>
         <Accordion type="single" collapsible className="w-full">
           <AccordionItem value="item-1">
@@ -404,7 +382,7 @@ export default function Home() {
           </AccordionItem>
         </Accordion>
       </div>
-      <p className="text-sm font-medium text-center py-2 bg-slate-100">
+      <p className="text-sm font-medium text-center py-2">
         &copy; {new Date().getFullYear()} Rizky Maulana - Tixar.
       </p>
     </div>

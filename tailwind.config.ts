@@ -19,7 +19,6 @@ const config = {
     },
     extend: {
       fontFamily: {
-        lilitaOne: ["var(--font-lilita)"],
         poppins: ["var(--font-poppins)"],
       },
       colors: {
