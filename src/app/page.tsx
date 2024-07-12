@@ -247,7 +247,9 @@ export default function Home() {
                   </CardContent>
                   <CardFooter>
                     <Button className="w-full bg-stone-800" asChild>
-                      <Link href="http://rizkymaulana.cloud">Lihat Detail</Link>
+                      <Link href="https://pilketos.rizkymaulana.cloud">
+                        Lihat Detail
+                      </Link>
                     </Button>
                   </CardFooter>
                 </Card>
