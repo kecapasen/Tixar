@@ -52,7 +52,9 @@ export default function Home() {
                   <Link href="#faq">FAQ</Link>
                 </Button>
               </div>
-              <Button className="bg-stone-800">Gabung sekarang!</Button>
+              <Button asChild className="bg-stone-800">
+                <Link href="https://bit.ly/join-tixar">Gabung sekarang!</Link>
+              </Button>
             </div>
           </SheetContent>
         </Sheet>
